@@ -14,6 +14,9 @@ bun dev
 
 # or
 hivemind # requires https://github.com/DarthSim/hivemind
+
+# or
+overmind start # requires https://github.com/DarthSim/overmind
 ```
 
 To run for production:

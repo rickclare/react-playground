@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "css": "bunx @tailwindcss/cli -i src/index.css -o src/output.css",
+    "css": "bunx @tailwindcss/cli -i src/styles/index.css -o src/styles/output.css",
     "css:watch": "bun css --watch",
     "dev": "bun --hot src/index.ts",
     "build": "bun run css --minify && bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
-    "start": "bun run build && NODE_ENV=production bun src/index.ts",
+    "start": "bun css --minify && NODE_ENV=production bun src/index.ts",
     "lint": "bun run lint:eslint && bun run lint:stylelint && bun run lint:tsc && bun run lint:prettier",
     "lint:eslint": "eslint .",
     "lint:stylelint": "stylelint \"src/**/*.css\"",

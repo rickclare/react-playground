@@ -1,4 +1,4 @@
 node_modules/
 dist/
 out/
-src/output.css
+src/styles/output.css

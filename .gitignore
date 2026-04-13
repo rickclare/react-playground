@@ -4,7 +4,7 @@ node_modules
 # output
 out/
 dist/
-src/output.css
+src/styles/output.css
 *.tgz
 
 # code coverage
