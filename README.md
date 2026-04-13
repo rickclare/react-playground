@@ -9,7 +9,11 @@ bun install
 To start a development server:
 
 ```bash
+bun css:watch # in separate terminal window
 bun dev
+
+# or
+hivemind # requires https://github.com/DarthSim/hivemind
 ```
 
 To run for production:

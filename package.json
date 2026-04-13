@@ -4,17 +4,38 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "css": "bunx @tailwindcss/cli -i src/index.css -o src/output.css",
+    "css:watch": "bun css --watch",
     "dev": "bun --hot src/index.ts",
-    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
-    "start": "NODE_ENV=production bun src/index.ts"
+    "build": "bun run css --minify && bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+    "start": "bun run build && NODE_ENV=production bun src/index.ts",
+    "lint": "bun run lint:eslint && bun run lint:stylelint && bun run lint:tsc && bun run lint:prettier",
+    "lint:eslint": "eslint .",
+    "lint:stylelint": "stylelint \"src/**/*.css\"",
+    "lint:tsc": "bunx tsc --noEmit",
+    "lint:prettier": "prettier --check --log-level=warn .",
+    "format": "prettier --write ."
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bun": "latest",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/bun": "latest"
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.2",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "stylelint": "^17.7.0",
+    "stylelint-config-standard": "^40.0.0",
+    "typescript-eslint": "^8.58.1"
   }
 }
