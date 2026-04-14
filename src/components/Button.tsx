@@ -1,15 +1,15 @@
-import { useState } from "react";
-
-export default function Button({ bgClass = "bg-green-500" }: { bgClass?: string }) {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
+export default function Button({
+  count,
+  onClick,
+  bgClass = "bg-green-500",
+}: {
+  count: number;
+  onClick: () => void;
+  bgClass?: string;
+}) {
   return (
     <button
-      onClick={handleClick}
+      onClick={onClick}
       className={`${bgClass} cursor-pointer rounded p-2 font-medium text-white hover:brightness-90`}
     >
       Clicked {count} times
