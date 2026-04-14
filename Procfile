@@ -1,2 +1,2 @@
 css: bun css:watch
-web: bun dev
+web: PORT=3000 bun dev

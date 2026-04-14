@@ -7,10 +7,19 @@
     <link rel="stylesheet" href="./styles/output.css" />
     <title>React Playground</title>
   </head>
-  <body
-    class="relative m-0 grid min-h-screen min-w-80 place-items-center bg-neutral-800 font-sans leading-normal text-white/87 scheme-light-dark"
-  >
-    <main id="root"></main>
-    <script type="module" src="./app/frontend.tsx"></script>
+  <body class="bg-neutral-800 text-white antialiased">
+    <header class="mb-4 grid items-center justify-center">
+      <img
+        src="./assets/react.svg"
+        alt="React Logo"
+        class="mx-auto h-24 p-6 transition-[filter] duration-300 will-change-[filter] hover:drop-shadow-[0_0_2em_#7dd3fcaa] motion-safe:animate-spin motion-safe:[animation-duration:20s]"
+      />
+
+      <h1 class="text-3xl leading-none">React Playground</h1>
+    </header>
+
+    <main id="react-root" class="grid items-center justify-center"></main>
+
+    <script type="module" src="./react.tsx"></script>
   </body>
 </html>
